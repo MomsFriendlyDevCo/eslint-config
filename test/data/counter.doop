@@ -1,0 +1,17 @@
+<script backend endpoint lang="js">
+let count = 0;
+
+app.post('/api/counter', (req, res) => {
+	res.send({count});
+});
+
+app.post('/api/counter/increment', (req, res) => {
+	count++;
+	res.send({count});
+});
+
+app.post('/api/counter/reset', (req, res) => {
+	count = 0;
+	res.send({count});
+});
+</script>
