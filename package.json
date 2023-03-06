@@ -1,29 +1,26 @@
 {
-  "name": "@doop/eslint-plugin",
+  "name": "@momsfriendlydevco/eslint",
   "version": "1.0.0",
-  "description": "ESLint plugin for @doop projects",
+  "description": "ESLint plugin for @MomsFriendlyDevCo projects",
   "main": "index.js",
   "scripts": {
     "test": "eslint --config index.js test/data"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MomsFriendlyDevCo/doop-eslint-plugin-doop.git"
+    "url": "git+https://github.com/MomsFriendlyDevCo/eslint.git"
   },
-  "keywords": [
-    "Doop",
-    "Eslint"
-  ],
+  "keywords": [],
   "author": "Matt Carter <m@ttcarter.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MomsFriendlyDevCo/doop-eslint-plugin-doop/issues"
+    "url": "https://github.com/MomsFriendlyDevCo/eslint/issues"
   },
-  "homepage": "https://github.com/MomsFriendlyDevCo/doop-eslint-plugin-doop#readme",
+  "homepage": "https://github.com/MomsFriendlyDevCo/eslint#readme",
   "dependencies": {
-    "eslint-plugin-vue": "^9.1.1"
+    "eslint-plugin-vue": "^9.9.0"
   },
   "devDependencies": {
-    "eslint": "^8.17.0"
+    "eslint": "^8.35.0"
   }
 }
