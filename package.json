@@ -1,5 +1,5 @@
 {
-  "name": "@momsfriendlydevco/eslint",
+  "name": "@momsfriendlydevco/eslint-config",
   "version": "1.0.0",
   "description": "ESLint plugin for @MomsFriendlyDevCo projects",
   "main": "index.js",
@@ -10,7 +10,10 @@
     "type": "git",
     "url": "git+https://github.com/MomsFriendlyDevCo/eslint.git"
   },
-  "keywords": [],
+  "keywords": [
+    "eslint",
+    "eslintconfig"
+  ],
   "author": "Matt Carter <m@ttcarter.com>",
   "license": "MIT",
   "bugs": {
@@ -18,9 +21,9 @@
   },
   "homepage": "https://github.com/MomsFriendlyDevCo/eslint#readme",
   "dependencies": {
-    "eslint-plugin-vue": "^9.9.0"
+    "eslint-plugin-vue": "^9.10.0"
   },
-  "devDependencies": {
-    "eslint": "^8.35.0"
+  "peerDependencies": {
+    "eslint": "^8.37.0"
   }
 }
