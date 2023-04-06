@@ -1,5 +1,3 @@
-console.log('Using @doop/eslint-plugin #index.js');
-
 module.exports = {
 	extends: [
 		'plugin:vue/recommended',
