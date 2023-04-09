@@ -17,10 +17,13 @@ module.exports = {
 			files: ['*.doop'],
 			parser: 'vue-eslint-parser',
 			globals: {
-				app: 'readable', // global backend App object
+				app: 'readable', // Global backend App object
+				db: 'readable', // Global app.db shortcut
 			},
 			rules: {
 				'vue/comment-directive': ['off'], // Screws up block parsing and we don't have <template/> anyway
+				'no-useless-escape': ['off'], // ESlint frequently gets what should and shouldn't be escaped wrong
+				'no-unused-vars': ['warn'],
 			},
 		},
 		// }}}
@@ -35,8 +38,8 @@ module.exports = {
 			},
 			globals: {
 				$: 'readable', // jQuery
-				_: 'readable', // lodash
-				app: 'readable', // global frontend app object
+				_: 'readable', // Lodash
+				app: 'readable', // Global frontend app object
 			},
 			rules: {
 				'vue/attributes-order': ['error', {
