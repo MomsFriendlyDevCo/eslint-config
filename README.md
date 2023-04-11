@@ -1,5 +1,5 @@
-@MomsFriendlyDevCo/eslint
-=========================
+@MomsFriendlyDevCo/ESLint-Config
+================================
 ESLint Rules for Mom's Friendly Dev Co.
 
 Installation
