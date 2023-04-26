@@ -42,7 +42,7 @@ module.exports = {
 				app: 'readable', // Global frontend app object
 			},
 			rules: {
-				'vue/attributes-order': ['error', {
+				'vue/attributes-order': ['warn', {
 					'order': [
 						'DEFINITION',
 						'LIST_RENDERING',
@@ -51,24 +51,66 @@ module.exports = {
 						'GLOBAL',
 						['UNIQUE', 'SLOT'],
 						'TWO_WAY_BINDING',
-						'OTHER_DIRECTIVES',
-						'EVENTS',
+						['OTHER_DIRECTIVES', 'EVENTS'],
 						'CONTENT',
 						'OTHER_ATTR',
 					],
-					'alphabetical': false
+					'alphabetical': false,
 				}],
 				'vue/component-definition-name-casing': ['off', 'PascalCase'], // FIXME: Doesn't support camelCase yet
 				'vue/html-closing-bracket-spacing': ['warn', {
-					'selfClosingTag': 'never'
+					selfClosingTag: 'never'
 				}],
 				'vue/html-indent': ['error', 'tab'],
 				'vue/max-attributes-per-line': ['warn', {
-					'singleline': 4,
-					'multiline': 1,
+					singleline: 4,
+					multiline: 1,
 				}],
 				'vue/multi-word-component-names': ['off'],
+				'vue/multiline-html-element-content-newline': ['warn', {
+					allowEmptyLines: true,
+				}],
 				'vue/mustache-interpolation-spacing': ['warn', 'never'],
+				'vue/order-in-components': ['warn', {
+					'order': [
+						'el',
+						'name',
+						'key',
+						'parent',
+						'functional',
+						['delimiters', 'comments'],
+						['components', 'directives', 'filters'],
+						'extends',
+						'mixins',
+						['provide', 'inject'],
+						'ROUTER_GUARDS',
+						'layout',
+						'middleware',
+						'validate',
+						'scrollToTop',
+						'transition',
+						'loading',
+						'inheritAttrs',
+						'model',
+						['data', 'asyncData', 'props', 'propsData'],
+						'computed',
+						'emits',
+						'setup',
+						'fetch',
+						'head',
+						'methods',
+						'LIFECYCLE_HOOKS',
+						'watch',
+						'watchQuery',
+						['template', 'render'],
+						'renderError'
+					]
+				}],
+				'vue/require-default-prop': ['off'],
+				'vue/singleline-html-element-content-newline': ['warn', {
+					ignoreWhenNoAttributes: true,
+					ignores: ['pre', 'textarea', 'div', 'INLINE_ELEMENTS'],
+				}],
 			},
 		},
 		// }}}
