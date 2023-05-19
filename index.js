@@ -1,3 +1,10 @@
+// Rules shared by both .doop + .vue files
+let vueCommonRules = {
+	'html-closing-bracket-spacing': ['off'], // Annoying doesn't allow <this-kind-of-thing/>
+	'no-useless-escape': ['off'], // ESlint frequently gets what should and shouldn't be escaped wrong
+	'no-unused-vars': ['warn'], // Dont make unused vars the end of the world
+};
+
 module.exports = {
 	extends: [
 		'plugin:vue/recommended',
@@ -22,8 +29,7 @@ module.exports = {
 			},
 			rules: {
 				'vue/comment-directive': ['off'], // Screws up block parsing and we don't have <template/> anyway
-				'no-useless-escape': ['off'], // ESlint frequently gets what should and shouldn't be escaped wrong
-				'no-unused-vars': ['warn'],
+				...vueCommonRules,
 			},
 		},
 		// }}}
@@ -111,6 +117,7 @@ module.exports = {
 					ignoreWhenNoAttributes: true,
 					ignores: ['pre', 'textarea', 'div', 'INLINE_ELEMENTS'],
 				}],
+				...vueCommonRules,
 			},
 		},
 		// }}}
