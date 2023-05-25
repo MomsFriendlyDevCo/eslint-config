@@ -1,6 +1,7 @@
 // Rules shared by both .doop + .vue files
 let vueCommonRules = {
 	'html-closing-bracket-spacing': ['off'], // Annoying doesn't allow <this-kind-of-thing/>
+	'no-debugger': ['warn'], // Debuggers are fine, just warn
 	'no-useless-escape': ['off'], // ESlint frequently gets what should and shouldn't be escaped wrong
 	'no-unused-vars': ['warn'], // Dont make unused vars the end of the world
 };
@@ -68,6 +69,13 @@ module.exports = {
 					selfClosingTag: 'never'
 				}],
 				'vue/html-indent': ['error', 'tab'],
+				'vue/html-self-closing': ['warn', {
+					html: {
+						void: 'always',
+						normal: 'any',
+						component: 'always',
+					},
+				}],
 				'vue/max-attributes-per-line': ['warn', {
 					singleline: 4,
 					multiline: 1,
