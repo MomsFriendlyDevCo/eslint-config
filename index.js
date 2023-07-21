@@ -1,5 +1,5 @@
 // Rules shared by both .doop + .vue files
-let vueCommonRules = {
+let jsCommonRules = {
 	'html-closing-bracket-spacing': ['off'], // Annoying doesn't allow <this-kind-of-thing/>
 	'no-debugger': ['warn'], // Debuggers are fine, just warn
 	'no-useless-escape': ['off'], // ESlint frequently gets what should and shouldn't be escaped wrong
@@ -20,6 +20,7 @@ module.exports = {
 		ecmaVersion: 'latest',
 	},
 	overrides: [
+
 		// .doop backend Files {{{
 		{
 			files: ['*.doop'],
@@ -30,10 +31,20 @@ module.exports = {
 			},
 			rules: {
 				'vue/comment-directive': ['off'], // Screws up block parsing and we don't have <template/> anyway
-				...vueCommonRules,
+				...jsCommonRules,
 			},
 		},
 		// }}}
+
+		// .mjs / .js regular files {{{
+		{
+			files: ['*.js', '*.mjs'],
+			rules: {
+				...jsCommonRules,
+			},
+		},
+		// }}}
+
 		// .vue frontend Files {{{
 		{
 			files: ['*.vue'],
@@ -125,9 +136,10 @@ module.exports = {
 					ignoreWhenNoAttributes: true,
 					ignores: ['pre', 'textarea', 'div', 'INLINE_ELEMENTS'],
 				}],
-				...vueCommonRules,
+				...jsCommonRules,
 			},
 		},
 		// }}}
+
 	],
 }
