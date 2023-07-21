@@ -1,6 +1,6 @@
 {
   "name": "@momsfriendlydevco/eslint-config",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "ESLint plugin for @MomsFriendlyDevCo projects",
   "main": "index.js",
   "scripts": {
