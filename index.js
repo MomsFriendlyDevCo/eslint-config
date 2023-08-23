@@ -104,7 +104,7 @@ module.exports = {
 						'parent',
 						'functional',
 						['delimiters', 'comments'],
-						['components', 'directives', 'filters'],
+						['components', 'directives', 'emits', 'filters'],
 						'extends',
 						'mixins',
 						['provide', 'inject'],
