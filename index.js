@@ -119,7 +119,6 @@ module.exports = {
 						'model',
 						['data', 'asyncData', 'props', 'propsData'],
 						'computed',
-						'emits',
 						'setup',
 						'fetch',
 						'head',
