@@ -19,6 +19,9 @@ module.exports = {
 	parserOptions: {
 		ecmaVersion: 'latest',
 	},
+	plugins: [
+		'jsdoc',
+	],
 	overrides: [
 
 		// .doop backend Files {{{
