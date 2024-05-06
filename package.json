@@ -1,10 +1,13 @@
 {
   "name": "@momsfriendlydevco/eslint-config",
-  "version": "1.0.9",
   "description": "ESLint plugin for @MomsFriendlyDevCo projects",
-  "main": "index.js",
+  "version": "2.0.0",
+  "type": "module",
   "scripts": {
     "test": "eslint --config index.js test/data"
+  },
+  "exports": {
+    ".": "./index.js"
   },
   "repository": {
     "type": "git",
@@ -21,16 +24,11 @@
   },
   "homepage": "https://github.com/MomsFriendlyDevCo/eslint#readme",
   "dependencies": {
-    "eslint-plugin-jsdoc": "^46.8.2",
-    "eslint-plugin-vue": "^9.18.1"
+    "eslint-plugin-jsdoc": "^48.2.3",
+    "eslint-plugin-vue": "^9.25.0",
+    "vue-eslint-parser": "^9.4.2"
   },
   "peerDependencies": {
-    "eslint": "^8.37.0"
-  },
-  "eslintConfig": {
-    "extends": "./index.js",
-    "parserOptions": {
-      "ecmaVersion": "latest"
-    }
+    "eslint": ">=9.2.0"
   }
 }

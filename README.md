@@ -4,22 +4,28 @@ ESLint Rules for Mom's Friendly Dev Co.
 
 Installation
 ------------
-Merge the following into `package.json`:
+1. Install version 9 or above of eslint + this package
 
-```json
-{
-  "scripts": {
-    "lint": "eslint --ext .doop --ext .js --ext .vue ."
-  },
-  "eslintConfig": {
-    "extends": [
-      "@momsfriendlydevco"
-    ],
-    "parserOptions": {
-      "ecmaVersion": "latest"
-    }
-  }
-}
+```shell
+npm i -D eslint @momsfriendlydevco/eslint-config
 ```
 
-See [@Doop/ESM-Loader](https://github.com/MomsFriendlyDevCo/doop-esm-loader) for more integration details.
+2. Add this template `eslint.config.js` file to the root of your main module / project:
+
+
+```javascript
+import RulesMFDC from '@momsfriendlydevco/eslint-config';
+
+export default [
+	{
+		// Global ignore rules - Do not add any other keys to this object or eslint doesn't treat this as global
+		ignores: [
+			'.*',
+			'docs/',
+			'dist/',
+			'node_modules/',
+		],
+	},
+	...RulesMFDC,
+]
+```
