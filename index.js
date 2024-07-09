@@ -5,6 +5,9 @@ import pluginVue from 'eslint-plugin-vue';
 // Rules shared by both .doop + .vue files
 let jsCommonRules = {
 	'html-closing-bracket-spacing': ['off'], // Annoying doesn't allow <this-kind-of-thing/>
+	'jsdoc/check-alignment': ['off'],  // Disable the JSDoc parser insisting on correct indents
+	'jsdoc/check-types': ['off'], // Disable the JSDoc parser being fussy about `@param {String}` vs `@param {string}`
+	'jsdoc/tag-lines': ['off'], // Disable the JSDoc parser being fussy about new-line spacing
 	'no-debugger': ['warn'], // Debuggers are fine, just warn
 	'no-useless-escape': ['off'], // ESlint frequently gets what should and shouldn't be escaped wrong
 	'no-unused-vars': ['warn'], // Dont make unused vars the end of the world
