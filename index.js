@@ -13,7 +13,7 @@ let jsCommonRules = {
 	// JSDoc
 	'jsdoc/check-alignment': ['off'],  // Disable the JSDoc parser insisting on correct indents
 	'jsdoc/check-tag-names': ['warn', { // Extend JSDoc allowed tags
-		definedTags: ['date', 'url'],
+		definedTags: ['date', 'slot', 'url'],
 	}],
 	'jsdoc/check-types': ['off'], // Disable the JSDoc parser being fussy about `@param {String}` vs `@param {string}`
 	'jsdoc/no-defaults': ['off'], // Disable the JSDoc parser that complains about optional params as its just silly
@@ -31,6 +31,7 @@ export default [
 		...pluginJSDoc.configs['flat/recommended'],
 		settings: {
 			jsdoc: {
+				// NOTE that some specs - like vue - can add to this config
 				mode: 'jsdoc',
 				tagNamePreference: {
 					// Prefer 'emits' over 'fires' to match Vue terminology {{{
@@ -84,6 +85,14 @@ export default [
 			parserOptions: {
 				vueFeatures: {
 					filter: true,
+				},
+			},
+		},
+		settings: {
+			jsdoc: {
+				tagNamePreference: {
+					// Allow 'prop' in Vue mode to match Vue terminology
+					prop: 'prop',
 				},
 			},
 		},
