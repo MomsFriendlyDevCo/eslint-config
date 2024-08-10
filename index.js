@@ -121,7 +121,7 @@ export default [
 			'vue/html-closing-bracket-spacing': ['warn', {
 				selfClosingTag: 'never'
 			}],
-			'vue/html-indent': ['error', 'tab'],
+			'vue/html-indent': ['warn', 'tab'],
 			'vue/html-self-closing': ['warn', {
 				html: {
 					void: 'always',
