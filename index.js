@@ -20,9 +20,6 @@ let jsCommonRules = {
 	'jsdoc/no-undefined-types': ['warn', {disableReporting: true}], // Disable the JSDoc parser for "undefined" types which it usually gets wrong. Ask eslint to still mark these as used though
 	'jsdoc/require-returns-description': ['off'], // Disable the JSDoc parse being fussy about return descriptions
 	'jsdoc/tag-lines': ['off'], // Disable the JSDoc parser being fussy about new-line spacing
-
-	// Vue
-	'vue/no-v-html': ['off'], // Disable Vue complaining about v-html being used
 };
 
 export default [
@@ -138,6 +135,7 @@ export default [
 				allowEmptyLines: true,
 			}],
 			'vue/mustache-interpolation-spacing': ['warn', 'never'],
+			'vue/no-v-html': ['off'], // Disable Vue complaining about v-html being used
 			'vue/order-in-components': ['warn', {
 				'order': [
 					'el',
