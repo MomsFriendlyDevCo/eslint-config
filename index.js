@@ -13,7 +13,7 @@ let jsCommonRules = {
 	// JSDoc
 	'jsdoc/check-alignment': ['off'],  // Disable the JSDoc parser insisting on correct indents
 	'jsdoc/check-tag-names': ['warn', { // Extend JSDoc allowed tags
-		definedTags: ['date', 'slot', 'url'],
+		definedTags: ['date', 'fixme', 'note', 'slot', 'url'],
 	}],
 	'jsdoc/check-types': ['off'], // Disable the JSDoc parser being fussy about `@param {String}` vs `@param {string}`
 	'jsdoc/no-defaults': ['off'], // Disable the JSDoc parser that complains about optional params as its just silly
