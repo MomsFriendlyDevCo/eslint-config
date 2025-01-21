@@ -1,5 +1,6 @@
 import eslintParser from 'vue-eslint-parser';
 import pluginJSDoc from 'eslint-plugin-jsdoc';
+import pluginUnicorn from 'eslint-plugin-unicorn';
 import pluginVue from 'eslint-plugin-vue';
 
 // Rules shared by both .doop + .vue files
@@ -37,6 +38,36 @@ export default [
 					// }}}
 				},
 			},
+		},
+	},
+
+	// eslint-plugin-unicorn
+	{
+		...pluginUnicorn.configs['flat/recommended'],
+		rules: {
+			...pluginUnicorn.configs['flat/recommended'].rules,
+			'unicorn/no-anonymous-default-export': ['off'],
+			'unicorn/prefer-string-replace-all': ['off'], // Gets annoying pretty fast and its rarely correct
+			'unicorn/prefer-dom-node-append': ['warn'],
+			'unicorn/prefer-global-this': ['warn'], // Disabled in .vue files to allow 'window' directly
+			'unicorn/prefer-ternary': ['warn'],
+			'unicorn/no-magic-array-flat-depth': ['warn'],
+			'unicorn/switch-case-braces': ['warn', 'avoid'],
+			'unicorn/consistent-function-scoping': ['off'], // This rule means well and its more optimal but makes functions with constants harder to read
+			'unicorn/prefer-ternary': ['off'], // This rule means well but it can screw up perfectly readable code
+			'unicorn/catch-error-name': ['off'],
+			'unicorn/explicit-length-check': ['off'],
+			'unicorn/filename-case': ['off'], // Disabled globally (gets re-enabled for .vue files)
+			'unicorn/no-empty-file': ['off'], // Breaks interface files + schema files with just JSDoc
+			'unicorn/prefer-logical-operator-over-ternary': ['off'],
+			'unicorn/prefer-string-raw': ['off'], // Just a downright weird rule
+			'unicorn/prefer-spread': ['off'],
+			'unicorn/no-array-reduce': ['off'],
+			'unicorn/no-nested-ternary': ['off'],
+			'unicorn/no-negated-condition': ['off'],
+			'unicorn/no-array-for-each': ['off'],
+			'unicorn/no-null': ['off'],
+			'unicorn/prevent-abbreviations': ['off'],
 		},
 	},
 
@@ -118,7 +149,12 @@ export default [
 			'vue/html-closing-bracket-spacing': ['warn', {
 				selfClosingTag: 'never'
 			}],
-			'vue/html-indent': ['warn', 'tab'],
+			'vue/html-indent': ['warn', 'tab', {
+				ignores: [ // Don't enforce indent rules for attributes that get complicated
+					'[class]',
+					'[v-tooltip]',
+				],
+			}],
 			'vue/html-self-closing': ['warn', {
 				html: {
 					void: 'always',
@@ -175,6 +211,15 @@ export default [
 				ignoreWhenNoAttributes: true,
 				ignores: ['pre', 'textarea', 'div', 'INLINE_ELEMENTS'],
 			}],
+
+			'unicorn/prefer-global-this': ['off'], // Allow direct use of `window.`
+			'unicorn/filename-case': ['warn', {
+				case: 'kebabCase',
+				ignore: [
+					'^App.vue$', // Vite projects
+				],
+			}],
+
 			...jsCommonRules,
 		},
 	},
