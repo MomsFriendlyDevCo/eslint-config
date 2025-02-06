@@ -58,6 +58,8 @@ export default [
 			'unicorn/catch-error-name': ['off'],
 			'unicorn/explicit-length-check': ['off'],
 			'unicorn/filename-case': ['off'], // Disabled globally (gets re-enabled for .vue files)
+			'unicorn/no-array-callback-reference': ['off'], // Overly aggressively attaches itself to all .find() operations
+			'unicorn/no-await-expression-member': ['off'], // There is nothing wrong with `(await thing).prop`
 			'unicorn/no-empty-file': ['off'], // Breaks interface files + schema files with just JSDoc
 			'unicorn/prefer-logical-operator-over-ternary': ['off'],
 			'unicorn/prefer-string-raw': ['off'], // Just a downright weird rule
