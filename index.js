@@ -61,6 +61,8 @@ export default [
 			'unicorn/no-array-callback-reference': ['off'], // Overly aggressively attaches itself to all .find() operations
 			'unicorn/no-await-expression-member': ['off'], // There is nothing wrong with `(await thing).prop`
 			'unicorn/no-empty-file': ['off'], // Breaks interface files + schema files with just JSDoc
+			'unicorn/no-this-assignment': ['off'], // Not allowing escape hatches to `this` when nesting functions is just dumb
+			'unicorn/no-useless-promise-resolve-reject': ['off'], // Constant complaints about using `throw` within simple promise chains
 			'unicorn/prefer-logical-operator-over-ternary': ['off'],
 			'unicorn/prefer-string-raw': ['off'], // Just a downright weird rule
 			'unicorn/prefer-spread': ['off'],
