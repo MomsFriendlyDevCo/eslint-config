@@ -46,32 +46,33 @@ export default [
 		...pluginUnicorn.configs['flat/recommended'],
 		rules: {
 			...pluginUnicorn.configs['flat/recommended'].rules,
-			'unicorn/no-anonymous-default-export': ['off'],
-			'unicorn/prefer-string-replace-all': ['off'], // Gets annoying pretty fast and its rarely correct
-			'unicorn/prefer-dom-node-append': ['warn'],
-			'unicorn/prefer-global-this': ['warn'], // Disabled in .vue files to allow 'window' directly
-			'unicorn/prefer-ternary': ['warn'],
-			'unicorn/no-magic-array-flat-depth': ['warn'],
-			'unicorn/switch-case-braces': ['warn', 'avoid'],
-			'unicorn/consistent-function-scoping': ['off'], // This rule means well and its more optimal but makes functions with constants harder to read
-			'unicorn/prefer-ternary': ['off'], // This rule means well but it can screw up perfectly readable code
 			'unicorn/catch-error-name': ['off'],
+			'unicorn/consistent-function-scoping': ['off'], // This rule means well and its more optimal but makes functions with constants harder to read
 			'unicorn/explicit-length-check': ['off'],
 			'unicorn/filename-case': ['off'], // Disabled globally (gets re-enabled for .vue files)
+			'unicorn/no-anonymous-default-export': ['off'],
 			'unicorn/no-array-callback-reference': ['off'], // Overly aggressively attaches itself to all .find() operations
+			'unicorn/no-array-for-each': ['off'],
+			'unicorn/no-array-reduce': ['off'],
 			'unicorn/no-await-expression-member': ['off'], // There is nothing wrong with `(await thing).prop`
 			'unicorn/no-empty-file': ['off'], // Breaks interface files + schema files with just JSDoc
+			'unicorn/no-magic-array-flat-depth': ['warn'],
+			'unicorn/no-negated-condition': ['off'],
+			'unicorn/no-nested-ternary': ['off'],
+			'unicorn/no-null': ['off'],
 			'unicorn/no-this-assignment': ['off'], // Not allowing escape hatches to `this` when nesting functions is just dumb
 			'unicorn/no-useless-promise-resolve-reject': ['off'], // Constant complaints about using `throw` within simple promise chains
+			'unicorn/prefer-dom-node-append': ['warn'],
+			'unicorn/prefer-global-this': ['warn'], // Disabled in .vue files to allow 'window' directly
 			'unicorn/prefer-logical-operator-over-ternary': ['off'],
-			'unicorn/prefer-string-raw': ['off'], // Just a downright weird rule
 			'unicorn/prefer-spread': ['off'],
-			'unicorn/no-array-reduce': ['off'],
-			'unicorn/no-nested-ternary': ['off'],
-			'unicorn/no-negated-condition': ['off'],
-			'unicorn/no-array-for-each': ['off'],
-			'unicorn/no-null': ['off'],
+			'unicorn/prefer-string-raw': ['off'], // Just a downright weird rule
+			'unicorn/prefer-string-replace-all': ['off'], // Gets annoying pretty fast and its rarely correct
+			'unicorn/prefer-ternary': ['off'], // This rule means well but it can screw up perfectly readable code
+			'unicorn/prefer-ternary': ['warn'],
+			'unicorn/prefer-type-error': ['off'], // Too TS specific
 			'unicorn/prevent-abbreviations': ['off'],
+			'unicorn/switch-case-braces': ['warn', 'avoid'],
 		},
 	},
 
