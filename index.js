@@ -4,7 +4,7 @@ import pluginUnicorn from 'eslint-plugin-unicorn';
 import pluginVue from 'eslint-plugin-vue';
 
 // Rules shared by both .doop + .vue files
-let jsCommonRules = {
+export let JSCommon = {
 	// Generic rules
 	'html-closing-bracket-spacing': ['off'], // Annoying doesn't allow <this-kind-of-thing/>
 	'no-debugger': ['warn'], // Debuggers are fine, just warn
@@ -91,7 +91,7 @@ export default [
 		},
 		rules: {
 			'vue/comment-directive': ['off'], // Screws up block parsing and we don't have <template/> anyway
-			...jsCommonRules,
+			...JSCommon,
 		},
 	},
 	// }}}
@@ -100,7 +100,7 @@ export default [
 	{
 		files: ['**/*.js', '**/*.mjs'],
 		rules: {
-			...jsCommonRules,
+			...JSCommon,
 		},
 	},
 	// }}}
@@ -225,7 +225,7 @@ export default [
 				],
 			}],
 
-			...jsCommonRules,
+			...JSCommon,
 		},
 	},
 	// }}}
