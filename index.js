@@ -155,9 +155,16 @@ export default [
 				selfClosingTag: 'never'
 			}],
 			'vue/html-indent': ['warn', 'tab', {
-				ignores: [ // Don't enforce indent rules for attributes that get complicated
-					'[class]',
+				ignores: [ // Don't enforce indent rules for attributes that can have indented logic
 					'[v-tooltip]',
+
+					// NOTE: Annoyingly this doesn't / can't match `[:class]` as that isn't valid esquery
+					//       I've tried all the following to fix this but none of these work - MC 2025-05-07
+					// 'VAttribute[directive=true][key.name.name="class"]',
+					// 'VDirective[key.name=class]',
+					// 'VDirective[key.name=/class/]',
+					// '[/.class/]',
+					// NOTE: To fix add `// eslint-disable vue-/html-indent`
 				],
 			}],
 			'vue/html-self-closing': ['warn', {
