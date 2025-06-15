@@ -1,10 +1,14 @@
 import eslintParser from 'vue-eslint-parser';
+import pluginEslintJS from '@eslint/js';
 import pluginJSDoc from 'eslint-plugin-jsdoc';
 import pluginUnicorn from 'eslint-plugin-unicorn';
 import pluginVue from 'eslint-plugin-vue';
 
 // Rules shared by both .doop + .vue files
 export let JSCommon = {
+	// Eslint/JS/recommended
+	...pluginEslintJS.configs.recommended.rules,
+
 	// Generic rules
 	'html-closing-bracket-spacing': ['off'], // Annoying doesn't allow <this-kind-of-thing/>
 	'no-debugger': ['warn'], // Debuggers are fine, just warn
