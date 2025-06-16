@@ -13,8 +13,7 @@ export default [
 		// Generic globals
 		languageOptions: {
 			globals: {
-				console: 'readonly',
-				fetch: 'readonly',
+				// Put custom globals here
 			},
 		},
 	},

@@ -28,6 +28,22 @@ export let JSCommon = {
 };
 
 export default [
+	// Generic globals {{{
+	{
+		languageOptions: {
+			globals: {
+				clearInterval: 'readonly',
+				clearTimeout: 'readonly',
+				console: 'readonly',
+				fetch: 'readonly',
+				setInterval: 'readonly',
+				setTimeout: 'readonly',
+				window: 'readonly',
+			},
+		},
+	},
+	// }}}
+
 	// eslint-plugin-jsdoc (with custom settings)
 	{
 		...pluginJSDoc.configs['flat/recommended'],
@@ -45,7 +61,7 @@ export default [
 		},
 	},
 
-	// eslint-plugin-unicorn
+	// eslint-plugin-unicorn {{{
 	{
 		...pluginUnicorn.configs['flat/recommended'],
 		rules: {
@@ -79,9 +95,11 @@ export default [
 			'unicorn/switch-case-braces': ['warn', 'avoid'],
 		},
 	},
+	// }}}
 
-	// eslint-plugin-vue
+	// eslint-plugin-vue {{{
 	...pluginVue.configs['flat/recommended'],
+	// }}}
 
 	// .doop backend Files {{{
 	{
@@ -109,6 +127,18 @@ export default [
 	},
 	// }}}
 
+	// Mocha test files {{{
+	{
+		files: ['**/test/**/*.js'],
+		languageOptions: {
+			globals: {
+				it: 'readonly',
+				describe: 'readonly',
+			},
+		},
+	},
+	// }}}
+
 	// .vue frontend Files {{{
 	{
 		files: ['**/*.vue'],
@@ -117,6 +147,8 @@ export default [
 				$: 'readable', // jQuery
 				_: 'readable', // Lodash
 				app: 'readable', // Global frontend app object
+				document: 'readable',
+				window: 'readable',
 			},
 			parser: eslintParser,
 			parserOptions: {
