@@ -36,6 +36,8 @@ export default [
 		languageOptions: {
 			globals: {
 				// Implied global functions
+				atob: 'readable',
+				btoa: 'readable',
 				clearInterval: 'readonly',
 				clearTimeout: 'readonly',
 				console: 'readonly',
@@ -51,6 +53,7 @@ export default [
 				Blob: 'readable',
 				Buffer: 'readable',
 				File: 'readable',
+				FormData: 'readable',
 				JSON: 'readable',
 				Promise: 'readable',
 				RegExp: 'readable',
