@@ -1,7 +1,7 @@
 {
   "name": "@momsfriendlydevco/eslint-config",
   "description": "ESLint plugin for @MomsFriendlyDevCo projects",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "type": "module",
   "scripts": {
     "test": "eslint --config index.js test/data"
