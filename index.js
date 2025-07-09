@@ -12,6 +12,7 @@ export let JSCommon = {
 	// Generic rules
 	'html-closing-bracket-spacing': ['off'], // Annoying doesn't allow <this-kind-of-thing/>
 	'no-debugger': ['warn'], // Debuggers are fine, just warn
+	'no-extra-boolean-cast': ['off'], // ESlint being a mama bear over boolean casting shorthand (`!!thing`)
 	'no-useless-escape': ['off'], // ESlint frequently gets what should and shouldn't be escaped wrong
 	'no-unused-vars': ['warn'], // Dont make unused vars the end of the world
 
