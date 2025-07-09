@@ -1,4 +1,5 @@
 import eslintParser from 'vue-eslint-parser';
+import globals from 'globals';
 import pluginEslintJS from '@eslint/js';
 import pluginJSDoc from 'eslint-plugin-jsdoc';
 import pluginUnicorn from 'eslint-plugin-unicorn';
@@ -36,29 +37,32 @@ export default [
 		languageOptions: {
 			globals: {
 				// Implied global functions
-				atob: 'readable',
-				btoa: 'readable',
+				atob: 'readonly',
+				btoa: 'readonly',
 				clearInterval: 'readonly',
 				clearTimeout: 'readonly',
 				console: 'readonly',
 				fetch: 'readonly',
 				setInterval: 'readonly',
 				setTimeout: 'readonly',
+				structuredClone: 'readonly',
 
 				// Implied Global singletons
-				console: 'readable',
+				console: 'readonly',
 
 				// Implied Global Classes
-				Array: 'readable',
-				Blob: 'readable',
-				Buffer: 'readable',
-				File: 'readable',
-				FormData: 'readable',
-				JSON: 'readable',
-				Promise: 'readable',
-				RegExp: 'readable',
-				URL: 'readable',
-				URLSearchParams: 'readable',
+				Array: 'readonly',
+				Blob: 'readonly',
+				Buffer: 'readonly',
+				CustomEvent: 'readonly',
+				File: 'readonly',
+				FormData: 'readonly',
+				Event: 'readonly',
+				JSON: 'readonly',
+				Promise: 'readonly',
+				RegExp: 'readonly',
+				URL: 'readonly',
+				URLSearchParams: 'readonly',
 			},
 		},
 	},
@@ -130,11 +134,11 @@ export default [
 		languageOptions: {
 			globals: {
 				// Implied Global Cloudflare Worker Classes
-				crypto: 'readable',
-				Headers: 'readable',
-				TextEncoder: 'readable',
-				Request: 'readable',
-				Response: 'readable',
+				crypto: 'readonly',
+				Headers: 'readonly',
+				TextEncoder: 'readonly',
+				Request: 'readonly',
+				Response: 'readonly',
 			},
 		},
 		rules: {
@@ -149,8 +153,8 @@ export default [
 		languageOptions: {
 			parser: eslintParser,
 			globals: {
-				app: 'readable', // Global backend App object
-				db: 'readable', // Global app.db shortcut
+				app: 'readonly', // Global backend App object
+				db: 'readonly', // Global app.db shortcut
 			},
 		},
 		rules: {
@@ -166,7 +170,7 @@ export default [
 		languageOptions: {
 			globals: {
 				// Implied Global singletons
-				process: 'readable',
+				process: 'readonly',
 			},
 		},
 		rules: {
@@ -199,12 +203,9 @@ export default [
 				// See also: "Generic globals" > languageOptions > globals
 
 				// Not-really-a-thing-but-I'll-allow-it globals
-				app: 'readable', // Generally the Vue.$root frontend app object
+				app: 'readonly', // Generally the Vue.$root frontend app object
 
-				// Implied meta-globals
-				document: 'readable',
-				navigator: 'readable',
-				window: 'readable',
+				...globals.browser,
 			},
 			parser: eslintParser,
 			parserOptions: {
