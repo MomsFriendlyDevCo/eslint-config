@@ -34,13 +34,27 @@ export default [
 	{
 		languageOptions: {
 			globals: {
+				// Implied global functions
 				clearInterval: 'readonly',
 				clearTimeout: 'readonly',
 				console: 'readonly',
 				fetch: 'readonly',
 				setInterval: 'readonly',
 				setTimeout: 'readonly',
-				window: 'readonly',
+
+				// Implied Global singletons
+				console: 'readable',
+
+				// Implied Global Classes
+				Array: 'readable',
+				Blob: 'readable',
+				Buffer: 'readable',
+				File: 'readable',
+				JSON: 'readable',
+				Promise: 'readable',
+				RegExp: 'readable',
+				URL: 'readable',
+				URLSearchParams: 'readable',
 			},
 		},
 	},
@@ -123,6 +137,12 @@ export default [
 	// .mjs / .js regular files {{{
 	{
 		files: ['**/*.js', '**/*.mjs'],
+		languageOptions: {
+			globals: {
+				// Implied Global singletons
+				process: 'readable',
+			},
+		},
 		rules: {
 			...JSCommon,
 		},
@@ -150,10 +170,14 @@ export default [
 		files: ['**/*.vue'],
 		languageOptions: {
 			globals: {
-				$: 'readable', // jQuery
-				_: 'readable', // Lodash
-				app: 'readable', // Global frontend app object
+				// See also: "Generic globals" > languageOptions > globals
+
+				// Not-really-a-thing-but-I'll-allow-it globals
+				app: 'readable', // Generally the Vue.$root frontend app object
+
+				// Implied meta-globals
 				document: 'readable',
+				navigator: 'readable',
 				window: 'readable',
 			},
 			parser: eslintParser,
