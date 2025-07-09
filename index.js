@@ -19,9 +19,10 @@ export let JSCommon = {
 	// JSDoc
 	'jsdoc/check-alignment': ['off'],  // Disable the JSDoc parser insisting on correct indents
 	'jsdoc/check-tag-names': ['warn', { // Extend JSDoc allowed tags
-		definedTags: ['date', 'fixme', 'note', 'slot', 'url'],
+		definedTags: ['date', 'env', 'fixme', 'note', 'slot', 'url'],
 	}],
 	'jsdoc/check-types': ['off'], // Disable the JSDoc parser being fussy about `@param {String}` vs `@param {string}`
+	'jsdoc/empty-tags': ['off'], // Disable JSDoc being fussy about using stuff like `@override` with any other description parts
 	'jsdoc/no-defaults': ['off'], // Disable the JSDoc parser that complains about optional params as its just silly
 	'jsdoc/no-undefined-types': ['warn', {disableReporting: true}], // Disable the JSDoc parser for "undefined" types which it usually gets wrong. Ask eslint to still mark these as used though
 	'jsdoc/require-returns-description': ['off'], // Disable the JSDoc parse being fussy about return descriptions
