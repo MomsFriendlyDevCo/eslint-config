@@ -30,6 +30,7 @@ export let JSCommon = {
 };
 
 export default [
+
 	// Generic globals {{{
 	{
 		languageOptions: {
@@ -60,7 +61,7 @@ export default [
 	},
 	// }}}
 
-	// eslint-plugin-jsdoc (with custom settings)
+	// eslint-plugin-jsdoc (with custom settings) {{{
 	{
 		...pluginJSDoc.configs['flat/recommended'],
 		settings: {
@@ -76,6 +77,7 @@ export default [
 			},
 		},
 	},
+	// }}}
 
 	// eslint-plugin-unicorn {{{
 	{
@@ -303,4 +305,5 @@ export default [
 		},
 	},
 	// }}}
+
 ]
