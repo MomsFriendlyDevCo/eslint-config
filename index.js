@@ -122,6 +122,27 @@ export default [
 	...pluginVue.configs['flat/recommended'],
 	// }}}
 
+	// Cloudflare workers {{{
+	{
+		files: ['**/workers/**/*.js'],
+
+		// Wrangler ignore rules
+		languageOptions: {
+			globals: {
+				// Implied Global Cloudflare Worker Classes
+				crypto: 'readable',
+				Headers: 'readable',
+				TextEncoder: 'readable',
+				Request: 'readable',
+				Response: 'readable',
+			},
+		},
+		rules: {
+			...JSCommon,
+		},
+	},
+	// }}}
+
 	// .doop backend Files {{{
 	{
 		files: ['**/*.doop'],
