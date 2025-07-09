@@ -36,33 +36,7 @@ export default [
 	{
 		languageOptions: {
 			globals: {
-				// Implied global functions
-				atob: 'readonly',
-				btoa: 'readonly',
-				clearInterval: 'readonly',
-				clearTimeout: 'readonly',
-				console: 'readonly',
-				fetch: 'readonly',
-				setInterval: 'readonly',
-				setTimeout: 'readonly',
-				structuredClone: 'readonly',
-
-				// Implied Global singletons
-				console: 'readonly',
-
-				// Implied Global Classes
-				Array: 'readonly',
-				Blob: 'readonly',
-				Buffer: 'readonly',
-				CustomEvent: 'readonly',
-				File: 'readonly',
-				FormData: 'readonly',
-				Event: 'readonly',
-				JSON: 'readonly',
-				Promise: 'readonly',
-				RegExp: 'readonly',
-				URL: 'readonly',
-				URLSearchParams: 'readonly',
+				...globals.node,
 			},
 		},
 	},
@@ -133,12 +107,8 @@ export default [
 		// Wrangler ignore rules
 		languageOptions: {
 			globals: {
-				// Implied Global Cloudflare Worker Classes
-				crypto: 'readonly',
-				Headers: 'readonly',
-				TextEncoder: 'readonly',
-				Request: 'readonly',
-				Response: 'readonly',
+				// Global Cloudflare Worker Classes
+				...globals.worker,
 			},
 		},
 		rules: {
@@ -169,8 +139,7 @@ export default [
 		files: ['**/*.js', '**/*.mjs'],
 		languageOptions: {
 			globals: {
-				// Implied Global singletons
-				process: 'readonly',
+				...globals.node,
 			},
 		},
 		rules: {
@@ -179,17 +148,14 @@ export default [
 	},
 	// }}}
 
-	// Mocha test files {{{
+	// Mocha/Chai test files {{{
 	{
 		files: ['**/test/**/*.js'],
 		languageOptions: {
 			globals: {
-				afterAll: 'readonly',
-				after: 'readonly',
-				beforeAll: 'readonly',
-				before: 'readonly',
-				describe: 'readonly',
-				it: 'readonly',
+				...globals.chai,
+				...globals.mocha,
+				...globals.node,
 			},
 		},
 	},
@@ -200,8 +166,6 @@ export default [
 		files: ['**/*.vue'],
 		languageOptions: {
 			globals: {
-				// See also: "Generic globals" > languageOptions > globals
-
 				// Not-really-a-thing-but-I'll-allow-it globals
 				app: 'readonly', // Generally the Vue.$root frontend app object
 
