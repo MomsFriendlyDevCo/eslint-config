@@ -134,8 +134,12 @@ export default [
 		files: ['**/test/**/*.js'],
 		languageOptions: {
 			globals: {
-				it: 'readonly',
+				afterAll: 'readonly',
+				after: 'readonly',
+				beforeAll: 'readonly',
+				before: 'readonly',
 				describe: 'readonly',
+				it: 'readonly',
 			},
 		},
 	},
