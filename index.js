@@ -26,6 +26,8 @@ export let JSCommon = {
 	'jsdoc/empty-tags': ['off'], // Disable JSDoc being fussy about using stuff like `@override` with any other description parts
 	'jsdoc/no-defaults': ['off'], // Disable the JSDoc parser that complains about optional params as its just silly
 	'jsdoc/no-undefined-types': ['warn', {disableReporting: true}], // Disable the JSDoc parser for "undefined" types which it usually gets wrong. Ask eslint to still mark these as used though
+	'jsdoc/reject-function-type': ['off'], // Disable complaints about using `{Function}` as a param type
+	'jsdoc/reject-any-type': ['off'], // Disable complaints about using `{*}` as a param type
 	'jsdoc/require-returns-description': ['off'], // Disable the JSDoc parse being fussy about return descriptions
 	'jsdoc/tag-lines': ['off'], // Disable the JSDoc parser being fussy about new-line spacing
 };
