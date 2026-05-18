@@ -3,6 +3,7 @@ import globals from 'globals';
 import pluginEslintJS from '@eslint/js';
 import pluginJSDoc from 'eslint-plugin-jsdoc';
 import pluginUnicorn from 'eslint-plugin-unicorn';
+import pluginStylistic from '@stylistic/eslint-plugin';
 import pluginVue from 'eslint-plugin-vue';
 
 // Rules shared by both .doop + .vue files
@@ -16,6 +17,7 @@ export let JSCommon = {
 	'no-extra-boolean-cast': ['off'], // ESlint being a mama bear over boolean casting shorthand (`!!thing`)
 	'no-useless-escape': ['off'], // ESlint frequently gets what should and shouldn't be escaped wrong
 	'no-unused-vars': ['warn'], // Dont make unused vars the end of the world
+	// See also: Stylistic plugin rules
 
 	// JSDoc
 	'jsdoc/check-alignment': ['off'],  // Disable the JSDoc parser insisting on correct indents
@@ -38,8 +40,24 @@ export default [
 	{
 		languageOptions: {
 			globals: {
+				...globals.browser,
 				...globals.node,
 			},
+		},
+	},
+	// }}}
+
+	// Stylistic Plugin {{{
+	{
+		...pluginStylistic.configs.recommended,
+		rules: {
+			'@stylistic/array-bracket-spacing': ['warn', 'never'], // Disable spaces in square brackets for array notation
+			'@stylistic/arrow-parens': ['warn', 'as-needed'],
+			'@stylistic/block-spacing': ['warn', 'always'], // Force expand single-line function defs
+			'@stylistic/indent': ['warn', 'tab'], // Force tab indents
+			'@stylistic/indent-binary-ops': ['warn', 'tab'], // Indent multi-line binary operators line &&, ||
+			'@stylistic/linebreak-style': ['warn', 'unix'],
+			'@stylistic/object-curly-spacing': ['warn', 'never'], // Disable spaces in object notation / imports
 		},
 	},
 	// }}}
