@@ -54,7 +54,9 @@ export default [
 			'@stylistic/array-bracket-spacing': ['warn', 'never'], // Disable spaces in square brackets for array notation
 			'@stylistic/arrow-parens': ['warn', 'as-needed'],
 			'@stylistic/block-spacing': ['warn', 'always'], // Force expand single-line function defs
-			'@stylistic/indent': ['warn', 'tab'], // Force tab indents
+			'@stylistic/indent': ['warn', 'tab', { // Force tab indents
+				ignoredNodes: ['ConditionalExpression'], // Ignore ternary indentation
+			}],
 			'@stylistic/indent-binary-ops': ['warn', 'tab'], // Indent multi-line binary operators line &&, ||
 			'@stylistic/linebreak-style': ['warn', 'unix'],
 			'@stylistic/object-curly-spacing': ['warn', 'never'], // Disable spaces in object notation / imports
