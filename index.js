@@ -304,6 +304,24 @@ export default [
 				ignores: ['pre', 'textarea', 'div', 'INLINE_ELEMENTS'],
 			}],
 
+			'unicorn/name-replacements': ['warn', {
+				replacements: { // Extend applicable replacement variable names
+					cb: false,
+					db: false,
+					e: false,
+					env: false,
+					fn: false,
+					i: false,
+					msg: false,
+					req: false,
+					res: false,
+				},
+			}],
+			'unicorn/no-for-each': ['off'], // Utterly wrong
+			'unicorn/no-this-outside-of-class': ['off'], // Frequently wrong when identifying where `this` is allowed with Vue files
+			'unicorn/no-useless-else': ['off'], // Utterly wrong when detecting promise chains
+			'unicorn/prefer-await': ['off'], // Utterly wrong when recommending 'await' instead of Promise chains
+			'unicorn/prefer-promise-try': ['off'], // See 'unicorn/prefer-await'
 			'unicorn/prefer-global-this': ['off'], // Allow direct use of `window.`
 			'unicorn/filename-case': ['warn', {
 				case: 'kebabCase',
