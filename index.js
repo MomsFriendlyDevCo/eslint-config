@@ -91,6 +91,7 @@ export default [
 			'unicorn/consistent-function-scoping': ['off'], // This rule means well and its more optimal but makes functions with constants harder to read
 			'unicorn/explicit-length-check': ['off'],
 			'unicorn/filename-case': ['off'], // Disabled globally (gets re-enabled for .vue files)
+			'unicorn/name-replacements': ['off'], // Plugn means well but frequently disallows perfeclty normal patterns
 			'unicorn/no-anonymous-default-export': ['off'],
 			'unicorn/no-array-callback-reference': ['off'], // Overly aggressively attaches itself to all .find() operations
 			'unicorn/no-array-for-each': ['off'],
@@ -108,6 +109,7 @@ export default [
 			'unicorn/prefer-dom-node-append': ['warn'],
 			'unicorn/prefer-global-this': ['warn'], // Disabled in .vue files to allow 'window' directly
 			'unicorn/prefer-logical-operator-over-ternary': ['off'],
+			'unicorn/prefer-promise-try': ['off'],
 			'unicorn/prefer-spread': ['off'],
 			'unicorn/prefer-string-raw': ['off'], // Just a downright weird rule
 			'unicorn/prefer-string-replace-all': ['off'], // Gets annoying pretty fast and its rarely correct
@@ -305,19 +307,7 @@ export default [
 				ignores: ['pre', 'textarea', 'div', 'INLINE_ELEMENTS'],
 			}],
 
-			'unicorn/name-replacements': ['warn', {
-				replacements: { // Extend applicable replacement variable names
-					cb: false,
-					db: false,
-					e: false,
-					env: false,
-					fn: false,
-					i: false,
-					msg: false,
-					req: false,
-					res: false,
-				},
-			}],
+			'unicorn/name-replacements': ['off'], // Plugn means well but frequently disallows perfeclty normal patterns
 			'unicorn/no-for-each': ['off'], // Utterly wrong
 			'unicorn/no-this-outside-of-class': ['off'], // Frequently wrong when identifying where `this` is allowed with Vue files
 			'unicorn/no-useless-else': ['off'], // Utterly wrong when detecting promise chains
