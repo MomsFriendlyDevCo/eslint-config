@@ -1,6 +1,5 @@
 <script>
-app.component('helloWorld', {
-});
+app.component('HelloWorld', {});
 </script>
 
 <template>

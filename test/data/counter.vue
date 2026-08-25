@@ -1,8 +1,8 @@
 <script>
-app.component('counter', {
+app.component('Counter', {
 	data() { return {
 		count: 1,
-	}},
+	} },
 	methods: {
 		increment() {
 			this.count++;
@@ -13,7 +13,7 @@ app.component('counter', {
 
 <template>
 	<div class="card">
-		<div>The current count is {{count | number}}</div>
+		<div>The current count is {{count}}</div>
 		<a @click="increment" class="btn btn-success">
 			<i class="far fa-plus"/>
 			Increment

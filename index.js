@@ -84,9 +84,9 @@ export default [
 
 	// eslint-plugin-unicorn {{{
 	{
-		...pluginUnicorn.configs['flat/recommended'],
+		...pluginUnicorn.configs.recommended,
 		rules: {
-			...pluginUnicorn.configs['flat/recommended'].rules,
+			...pluginUnicorn.configs.recommended.rules,
 			'unicorn/catch-error-name': ['off'],
 			'unicorn/consistent-function-scoping': ['off'], // This rule means well and its more optimal but makes functions with constants harder to read
 			'unicorn/explicit-length-check': ['off'],
