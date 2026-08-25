@@ -104,6 +104,8 @@ export default [
 			'unicorn/no-nested-ternary': ['off'],
 			'unicorn/no-null': ['off'],
 			'unicorn/no-this-assignment': ['off'], // Not allowing escape hatches to `this` when nesting functions is just dumb
+			'unicorn/no-top-level-assignment-in-function': ['off'], // Module-level state mutated by handler functions is a normal backend pattern (e.g. .doop route handlers)
+			'unicorn/no-useless-else': ['off'], // Makes for unreadable code if we ever use a return in an IF block
 			'unicorn/no-useless-promise-resolve-reject': ['off'], // Constant complaints about using `throw` within simple promise chains
 			'unicorn/prefer-await': ['off'], // Utterly wrong when recommending 'await' instead of Promise chains
 			'unicorn/prefer-dom-node-append': ['warn'],
@@ -307,12 +309,8 @@ export default [
 				ignores: ['pre', 'textarea', 'div', 'INLINE_ELEMENTS'],
 			}],
 
-			'unicorn/name-replacements': ['off'], // Plugn means well but frequently disallows perfeclty normal patterns
-			'unicorn/no-for-each': ['off'], // Utterly wrong
+			// NOTE: These suplement the existing rules in `eslint-plugin-unicorn` if the rule is global update it there first
 			'unicorn/no-this-outside-of-class': ['off'], // Frequently wrong when identifying where `this` is allowed with Vue files
-			'unicorn/no-useless-else': ['off'], // Utterly wrong when detecting promise chains
-			'unicorn/prefer-await': ['off'], // Utterly wrong when recommending 'await' instead of Promise chains
-			'unicorn/prefer-promise-try': ['off'], // See 'unicorn/prefer-await'
 			'unicorn/prefer-global-this': ['off'], // Allow direct use of `window.`
 			'unicorn/filename-case': ['warn', {
 				case: 'kebabCase',
